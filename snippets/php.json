@@ -1,0 +1,18 @@
+{
+    "exam": {
+        "prefix": "phpexample",
+        "body": [
+            "<?php",
+            "",
+            "class MyClass {",
+            "    public function myMethod() {",
+            "        // Tu código aquí",
+            "    }",
+            "}",
+            "",
+            "$obj = new MyClass();",
+            "$obj->myMethod();",
+            "?>"
+        ]
+    }
+}
