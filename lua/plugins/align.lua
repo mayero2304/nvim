@@ -1,8 +1,7 @@
 return {
   "Vonr/align.nvim",
   branch = "v2",
-  lazy = true,
-  init = function()
-    -- Create your mappings here
+  lazy   = true,
+  init   = function()
   end,
 }

@@ -56,3 +56,52 @@ vim.cmd("nnoremap gpd <cmd>lua require('goto-preview').goto_preview_definition()
 vim.cmd("nnoremap gpi <cmd>lua require('goto-preview').goto_preview_implementation()<CR>")
 vim.cmd("nnoremap gP <cmd>lua require('goto-preview').close_all_win()<CR>")
 vim.cmd("nnoremap gpr <cmd>lua require('goto-preview').goto_preview_references()<CR>")
+
+-- Aligns to 1 character
+map("x", "aa", function()
+  require("align").align_to_char({
+    length = 1,
+  })
+end, opts)
+
+-- Aligns to 2 characters with previews
+map("x", "ad", function()
+  require("align").align_to_char({
+    preview = true,
+    length = 2,
+  })
+end, opts)
+
+-- Aligns to a string with previews
+map("x", "aw", function()
+  require("align").align_to_string({
+    preview = true,
+    regex = false,
+  })
+end, opts)
+
+map("n", "<C-c>", ":ColorizerToggle<CR>", opts)
+
+-- Aligns to a Vim regex with previews
+map("x", "ar", function()
+  require("align").align_to_string({
+    preview = true,
+    regex = true,
+  })
+end, opts)
+
+-- Example gawip to align a paragraph to a string with previews
+map("n", "gaw", function()
+  local a = require("align")
+  a.operator(a.align_to_string, {
+    regex = false,
+    preview = true,
+  })
+end, opts)
+
+-- Example gaaip to align a paragraph to 1 character
+map("n", "gaa", function()
+  local a = require("align")
+  a.operator(a.align_to_char)
+end, opts)
+

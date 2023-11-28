@@ -1,6 +1,6 @@
 {
-    "exam": {
-        "prefix": "phpexample",
+    "class": {
+        "prefix": "class",
         "body": [
             "<?php",
             "",
@@ -12,6 +12,16 @@
             "",
             "$obj = new MyClass();",
             "$obj->myMethod();",
+            "?>"
+        ]
+    },
+    "php": {
+        "prefix": "php",
+        "body": [
+            "<?php",
+            "",
+            "",
+            "$1",
             "?>"
         ]
     }
